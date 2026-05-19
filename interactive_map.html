@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1150bd5e600036e8bc51fa4f1c084b8a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; right: 50px; width: 200px; height: auto;
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <p><b>Detected Communities</b></p>
+    <p><span style="background-color:red; width:20px; height:10px; display:inline-block;"></span> Community 0</p><p><span style="background-color:blue; width:20px; height:10px; display:inline-block;"></span> Community 1</p><p><span style="background-color:green; width:20px; height:10px; display:inline-block;"></span> Community 2</p></div>
+    
+            <div class="folium-map" id="map_1150bd5e600036e8bc51fa4f1c084b8a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1150bd5e600036e8bc51fa4f1c084b8a = L.map(
+                "map_1150bd5e600036e8bc51fa4f1c084b8a",
+                {
+                    center: [41.8781, -87.6298],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_19c253fbbbad89ad7fb050aa71a00045 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_19c253fbbbad89ad7fb050aa71a00045.addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+            var circle_marker_9a8d84430ca2d9451027025d956a6fc5 = L.circleMarker(
+                [41.94056199562147, -87.76111767447921],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_a69d5c21fddedc0f99ec0852677aab8a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_28048045fe2bf6256396ed2d1815e08a = $(`<div id="html_28048045fe2bf6256396ed2d1815e08a" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318001001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 889<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_a69d5c21fddedc0f99ec0852677aab8a.setContent(html_28048045fe2bf6256396ed2d1815e08a);
+            
+        
+
+        circle_marker_9a8d84430ca2d9451027025d956a6fc5.bindPopup(popup_a69d5c21fddedc0f99ec0852677aab8a)
+        ;
+
+        
+    
+    
+            var circle_marker_6e95e60e7928d774f3310f7b0b042fb5 = L.circleMarker(
+                [41.970364575088965, -87.76227446254947],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_d368a290a69d9ce26efe7b48cb545ba4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4fc196487f52c3cde99606c725459685 = $(`<div id="html_4fc196487f52c3cde99606c725459685" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318001002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1478<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_d368a290a69d9ce26efe7b48cb545ba4.setContent(html_4fc196487f52c3cde99606c725459685);
+            
+        
+
+        circle_marker_6e95e60e7928d774f3310f7b0b042fb5.bindPopup(popup_d368a290a69d9ce26efe7b48cb545ba4)
+        ;
+
+        
+    
+    
+            var circle_marker_c9b90f93797308d9e00aace9158d60a8 = L.circleMarker(
+                [41.9737256479875, -87.77745680043186],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_dfe6e83fbc054f09c11677d892aef72f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_868d57789aa0346ad57488203021923e = $(`<div id="html_868d57789aa0346ad57488203021923e" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1736<br>                 <b>Med Income:</b> $212,574                 </div>`)[0];
+                popup_dfe6e83fbc054f09c11677d892aef72f.setContent(html_868d57789aa0346ad57488203021923e);
+            
+        
+
+        circle_marker_c9b90f93797308d9e00aace9158d60a8.bindPopup(popup_dfe6e83fbc054f09c11677d892aef72f)
+        ;
+
+        
+    
+    
+            var circle_marker_fb3b249cf54e2e7b47b3fad52c693339 = L.circleMarker(
+                [41.93430941548797, -87.7772117746327],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_11fcff7e8404161e23a7b896979e8408 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0cf2d2e3f6f9075da40a5883d66c6000 = $(`<div id="html_0cf2d2e3f6f9075da40a5883d66c6000" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 999<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_11fcff7e8404161e23a7b896979e8408.setContent(html_0cf2d2e3f6f9075da40a5883d66c6000);
+            
+        
+
+        circle_marker_fb3b249cf54e2e7b47b3fad52c693339.bindPopup(popup_11fcff7e8404161e23a7b896979e8408)
+        ;
+
+        
+    
+    
+            var circle_marker_2760226219b4f9e4e9d7809137ea057a = L.circleMarker(
+                [41.955088437412826, -87.76044606172728],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_e018e9f4fb6a8bb48177f3a06cbdacd6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e41dec152fd385bf3ae10b7c15db3371 = $(`<div id="html_e41dec152fd385bf3ae10b7c15db3371" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002003<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 916<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_e018e9f4fb6a8bb48177f3a06cbdacd6.setContent(html_e41dec152fd385bf3ae10b7c15db3371);
+            
+        
+
+        circle_marker_2760226219b4f9e4e9d7809137ea057a.bindPopup(popup_e018e9f4fb6a8bb48177f3a06cbdacd6)
+        ;
+
+        
+    
+    
+            var circle_marker_097aaa79947e3cd353ab3d496e7b629c = L.circleMarker(
+                [41.95914717468498, -87.76324959871371],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_695f0df6c6605e1f808ff86ce78b3063 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f7ca88f59ce17da9805be022ff0176a9 = $(`<div id="html_f7ca88f59ce17da9805be022ff0176a9" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002004<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 843<br>                 <b>Med Income:</b> $171,184                 </div>`)[0];
+                popup_695f0df6c6605e1f808ff86ce78b3063.setContent(html_f7ca88f59ce17da9805be022ff0176a9);
+            
+        
+
+        circle_marker_097aaa79947e3cd353ab3d496e7b629c.bindPopup(popup_695f0df6c6605e1f808ff86ce78b3063)
+        ;
+
+        
+    
+    
+            var circle_marker_11704def0ce5861b4eb0403691a3aaf2 = L.circleMarker(
+                [41.962020860748126, -87.76902436811629],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_8796eec8fe50204308126afe4843d236 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_be826cbe43a22385c4ce77c36815bff4 = $(`<div id="html_be826cbe43a22385c4ce77c36815bff4" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002005<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 857<br>                 <b>Med Income:</b> $145,611                 </div>`)[0];
+                popup_8796eec8fe50204308126afe4843d236.setContent(html_be826cbe43a22385c4ce77c36815bff4);
+            
+        
+
+        circle_marker_11704def0ce5861b4eb0403691a3aaf2.bindPopup(popup_8796eec8fe50204308126afe4843d236)
+        ;
+
+        
+    
+    
+            var circle_marker_53676ea4e32c7b972bbeb37378cecda7 = L.circleMarker(
+                [41.97343300790467, -87.76257244768155],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_ed821c09dbfedf95ce00570f7a6d4ead = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4ca5cb85715e21a01252503109c35318 = $(`<div id="html_4ca5cb85715e21a01252503109c35318" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318002006<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1069<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_ed821c09dbfedf95ce00570f7a6d4ead.setContent(html_4ca5cb85715e21a01252503109c35318);
+            
+        
+
+        circle_marker_53676ea4e32c7b972bbeb37378cecda7.bindPopup(popup_ed821c09dbfedf95ce00570f7a6d4ead)
+        ;
+
+        
+    
+    
+            var circle_marker_2a8c030588e3ad34c735bf234f43731e = L.circleMarker(
+                [41.94630986629889, -87.76181039685005],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_c412fab7cbeb53412046936a68ea3920 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6f99cf5b6cc264219ded0bdb88815aaa = $(`<div id="html_6f99cf5b6cc264219ded0bdb88815aaa" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318003001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1267<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_c412fab7cbeb53412046936a68ea3920.setContent(html_6f99cf5b6cc264219ded0bdb88815aaa);
+            
+        
+
+        circle_marker_2a8c030588e3ad34c735bf234f43731e.bindPopup(popup_c412fab7cbeb53412046936a68ea3920)
+        ;
+
+        
+    
+    
+            var circle_marker_c1ca0272bd2d08cc1161605a22dc19c1 = L.circleMarker(
+                [41.94743852225979, -87.77184680868288],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_2706667cdbe60677720c668725997b6d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_92801ed6324005de1ac8ce11ca6173f8 = $(`<div id="html_92801ed6324005de1ac8ce11ca6173f8" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318003002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 495<br>                 <b>Med Income:</b> $203,346                 </div>`)[0];
+                popup_2706667cdbe60677720c668725997b6d.setContent(html_92801ed6324005de1ac8ce11ca6173f8);
+            
+        
+
+        circle_marker_c1ca0272bd2d08cc1161605a22dc19c1.bindPopup(popup_2706667cdbe60677720c668725997b6d)
+        ;
+
+        
+    
+    
+            var circle_marker_bb35ff6f5218e2c58cca53e6033323ba = L.circleMarker(
+                [41.95437735678639, -87.76555663271596],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_bdbfea333f6be9dc645feea120bad910 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5e7de6141e0ce0e83f04e0b692da36f5 = $(`<div id="html_5e7de6141e0ce0e83f04e0b692da36f5" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318003003<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1541<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_bdbfea333f6be9dc645feea120bad910.setContent(html_5e7de6141e0ce0e83f04e0b692da36f5);
+            
+        
+
+        circle_marker_bb35ff6f5218e2c58cca53e6033323ba.bindPopup(popup_bdbfea333f6be9dc645feea120bad910)
+        ;
+
+        
+    
+    
+            var circle_marker_8745e44c1fdcc29915ecc4e5cd5c1d50 = L.circleMarker(
+                [41.945783156268824, -87.76646056960897],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_aa01b0eaed5fc3953bb89f39229815d8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ca749c4c09497169c360ff247367b1fa = $(`<div id="html_ca749c4c09497169c360ff247367b1fa" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318004001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1129<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_aa01b0eaed5fc3953bb89f39229815d8.setContent(html_ca749c4c09497169c360ff247367b1fa);
+            
+        
+
+        circle_marker_8745e44c1fdcc29915ecc4e5cd5c1d50.bindPopup(popup_aa01b0eaed5fc3953bb89f39229815d8)
+        ;
+
+        
+    
+    
+            var circle_marker_1de6b357dd8227b2244f622a9dc75382 = L.circleMarker(
+                [41.951503880243564, -87.7696138347346],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_fc0e4e271b0e13c79bdfb1acb8278f71 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e9916a00cbd80e0038e2acc5c421e5ce = $(`<div id="html_e9916a00cbd80e0038e2acc5c421e5ce" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318004002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1547<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_fc0e4e271b0e13c79bdfb1acb8278f71.setContent(html_e9916a00cbd80e0038e2acc5c421e5ce);
+            
+        
+
+        circle_marker_1de6b357dd8227b2244f622a9dc75382.bindPopup(popup_fc0e4e271b0e13c79bdfb1acb8278f71)
+        ;
+
+        
+    
+    
+            var circle_marker_ae45d850c93ed047334eeabfe3dc115b = L.circleMarker(
+                [41.958225860257684, -87.77476970227035],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_e429c720951f78bbc0354a0e91a9c5b6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_13ba114352777a6398e461000d092386 = $(`<div id="html_13ba114352777a6398e461000d092386" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318004003<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1010<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_e429c720951f78bbc0354a0e91a9c5b6.setContent(html_13ba114352777a6398e461000d092386);
+            
+        
+
+        circle_marker_ae45d850c93ed047334eeabfe3dc115b.bindPopup(popup_e429c720951f78bbc0354a0e91a9c5b6)
+        ;
+
+        
+    
+    
+            var circle_marker_774b38b7d0fe59bde76ece87625e14f3 = L.circleMarker(
+                [41.95993680068707, -87.7673842982211],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_dc0bdc6451870a6fdf1393a31e623c20 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ee7d90b5ed0341d70686f34c146d58d4 = $(`<div id="html_ee7d90b5ed0341d70686f34c146d58d4" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318005001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 806<br>                 <b>Med Income:</b> $102,417                 </div>`)[0];
+                popup_dc0bdc6451870a6fdf1393a31e623c20.setContent(html_ee7d90b5ed0341d70686f34c146d58d4);
+            
+        
+
+        circle_marker_774b38b7d0fe59bde76ece87625e14f3.bindPopup(popup_dc0bdc6451870a6fdf1393a31e623c20)
+        ;
+
+        
+    
+    
+            var circle_marker_951a2876d0871317227b50c51b156819 = L.circleMarker(
+                [41.968768007151134, -87.75692445170499],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_ff1424329370714ef36d0c89e4e0417e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ef28189fb56676c5c03d5d3c2f8ef01d = $(`<div id="html_ef28189fb56676c5c03d5d3c2f8ef01d" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318005002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1047<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_ff1424329370714ef36d0c89e4e0417e.setContent(html_ef28189fb56676c5c03d5d3c2f8ef01d);
+            
+        
+
+        circle_marker_951a2876d0871317227b50c51b156819.bindPopup(popup_ff1424329370714ef36d0c89e4e0417e)
+        ;
+
+        
+    
+    
+            var circle_marker_8481141599b0940614adc1a63ba747bd = L.circleMarker(
+                [41.9590413083741, -87.75320745007392],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_40fc43c8faf6c6fc641b5d1a250f40f8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f470d5598c3512342fc20e7b8f1e71b6 = $(`<div id="html_f470d5598c3512342fc20e7b8f1e71b6" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318005003<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1163<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_40fc43c8faf6c6fc641b5d1a250f40f8.setContent(html_f470d5598c3512342fc20e7b8f1e71b6);
+            
+        
+
+        circle_marker_8481141599b0940614adc1a63ba747bd.bindPopup(popup_40fc43c8faf6c6fc641b5d1a250f40f8)
+        ;
+
+        
+    
+    
+            var circle_marker_c6c05740d615ff14a69a3feac72fad96 = L.circleMarker(
+                [41.96439129304127, -87.76565574616002],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_48ad4aed8f491a3d47ee51a0a9675974 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aed7520b98be87b240dc8b5cc9998487 = $(`<div id="html_aed7520b98be87b240dc8b5cc9998487" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318005004<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1609<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_48ad4aed8f491a3d47ee51a0a9675974.setContent(html_aed7520b98be87b240dc8b5cc9998487);
+            
+        
+
+        circle_marker_c6c05740d615ff14a69a3feac72fad96.bindPopup(popup_48ad4aed8f491a3d47ee51a0a9675974)
+        ;
+
+        
+    
+    
+            var circle_marker_342c7cb712e9cfa460e19d78ce794c43 = L.circleMarker(
+                [41.95353112126419, -87.76479467678723],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_ccc39154ae30760a95c6fd5cc0f4d5b2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_875b4e3766c990692be61cdb2bc10336 = $(`<div id="html_875b4e3766c990692be61cdb2bc10336" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318005005<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 951<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_ccc39154ae30760a95c6fd5cc0f4d5b2.setContent(html_875b4e3766c990692be61cdb2bc10336);
+            
+        
+
+        circle_marker_342c7cb712e9cfa460e19d78ce794c43.bindPopup(popup_ccc39154ae30760a95c6fd5cc0f4d5b2)
+        ;
+
+        
+    
+    
+            var circle_marker_af8a3d0002e2192f2c11157eecee84ae = L.circleMarker(
+                [41.95387701671471, -87.75453913755403],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_7d329d0543a601ec264d9d0efc0536a0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d2943b70238cea1802fd52d31fc3460 = $(`<div id="html_2d2943b70238cea1802fd52d31fc3460" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318006001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1358<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_7d329d0543a601ec264d9d0efc0536a0.setContent(html_2d2943b70238cea1802fd52d31fc3460);
+            
+        
+
+        circle_marker_af8a3d0002e2192f2c11157eecee84ae.bindPopup(popup_7d329d0543a601ec264d9d0efc0536a0)
+        ;
+
+        
+    
+    
+            var circle_marker_2d4a96233ebe7209f33e48ab8c9ff7cb = L.circleMarker(
+                [41.95370612654614, -87.77301890333968],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4ce88ca729145815bfa46a8fe60d064f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_499eafee41cabffe6354756c957cf1d2 = $(`<div id="html_499eafee41cabffe6354756c957cf1d2" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318006002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1031<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_4ce88ca729145815bfa46a8fe60d064f.setContent(html_499eafee41cabffe6354756c957cf1d2);
+            
+        
+
+        circle_marker_2d4a96233ebe7209f33e48ab8c9ff7cb.bindPopup(popup_4ce88ca729145815bfa46a8fe60d064f)
+        ;
+
+        
+    
+    
+            var circle_marker_f186a79db50bac835a717658a1e08564 = L.circleMarker(
+                [41.967654221430536, -87.77193373625069],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_91ce75c2b20edc8ac9ce991123dcc436 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_19084ebd83f40b7e9bbe55750cddce9b = $(`<div id="html_19084ebd83f40b7e9bbe55750cddce9b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318007001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 736<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_91ce75c2b20edc8ac9ce991123dcc436.setContent(html_19084ebd83f40b7e9bbe55750cddce9b);
+            
+        
+
+        circle_marker_f186a79db50bac835a717658a1e08564.bindPopup(popup_91ce75c2b20edc8ac9ce991123dcc436)
+        ;
+
+        
+    
+    
+            var circle_marker_7bf50f22c512c2e42a627096d7a93baf = L.circleMarker(
+                [41.95658477729503, -87.75645746335314],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_fee03636b5b11b23ca226b72696b31c8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9e5a2e1feceb62088b87caeba7394892 = $(`<div id="html_9e5a2e1feceb62088b87caeba7394892" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318007002<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1830<br>                 <b>Med Income:</b> $230,809                 </div>`)[0];
+                popup_fee03636b5b11b23ca226b72696b31c8.setContent(html_9e5a2e1feceb62088b87caeba7394892);
+            
+        
+
+        circle_marker_7bf50f22c512c2e42a627096d7a93baf.bindPopup(popup_fee03636b5b11b23ca226b72696b31c8)
+        ;
+
+        
+    
+    
+            var circle_marker_96a4f0b4b9f36273e90687e60cbd75d3 = L.circleMarker(
+                [41.958324601744906, -87.76406195857503],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_54e048b45a4e9a593f3575a719f51345 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bfdc7b184416108ece661b3ebfa761c1 = $(`<div id="html_bfdc7b184416108ece661b3ebfa761c1" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318007003<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 966<br>                 <b>Med Income:</b> $250,001                 </div>`)[0];
+                popup_54e048b45a4e9a593f3575a719f51345.setContent(html_bfdc7b184416108ece661b3ebfa761c1);
+            
+        
+
+        circle_marker_96a4f0b4b9f36273e90687e60cbd75d3.bindPopup(popup_54e048b45a4e9a593f3575a719f51345)
+        ;
+
+        
+    
+    
+            var circle_marker_e36dc14aaf361a93047cad17974fb2d9 = L.circleMarker(
+                [41.9510713705575, -87.77341578980631],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9a29aa94a203aa94d930835a41603483 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f8467bc11dfa78530f678862c9bb4003 = $(`<div id="html_f8467bc11dfa78530f678862c9bb4003" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318007004<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1318<br>                 <b>Med Income:</b> $221,875                 </div>`)[0];
+                popup_9a29aa94a203aa94d930835a41603483.setContent(html_f8467bc11dfa78530f678862c9bb4003);
+            
+        
+
+        circle_marker_e36dc14aaf361a93047cad17974fb2d9.bindPopup(popup_9a29aa94a203aa94d930835a41603483)
+        ;
+
+        
+    
+    
+            var circle_marker_417a5bb60beed05c3fa74a2743e09cf4 = L.circleMarker(
+                [41.93690489886454, -87.75781948414637],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_30bc310bc573330d43e256686db89dc5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c16f3a3a9cb51573c9f06a8a6d1998df = $(`<div id="html_c16f3a3a9cb51573c9f06a8a6d1998df" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170318008001<br>                 <b>CA:</b> Portage Park<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 2331<br>                 <b>Med Income:</b> $110,156                 </div>`)[0];
+                popup_30bc310bc573330d43e256686db89dc5.setContent(html_c16f3a3a9cb51573c9f06a8a6d1998df);
+            
+        
+
+        circle_marker_417a5bb60beed05c3fa74a2743e09cf4.bindPopup(popup_30bc310bc573330d43e256686db89dc5)
+        ;
+
+        
+    
+    
+            var circle_marker_7424105e15f152f5a55caa63c4f94dd5 = L.circleMarker(
+                [41.885579875462916, -87.75472454932172],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_d9adeafd18f1ec6fc77a0186744f8bda = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_54551cf7ae56f05c426cb6322f39e2d8 = $(`<div id="html_54551cf7ae56f05c426cb6322f39e2d8" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312502001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1369<br>                 <b>Med Income:</b> $52,708                 </div>`)[0];
+                popup_d9adeafd18f1ec6fc77a0186744f8bda.setContent(html_54551cf7ae56f05c426cb6322f39e2d8);
+            
+        
+
+        circle_marker_7424105e15f152f5a55caa63c4f94dd5.bindPopup(popup_d9adeafd18f1ec6fc77a0186744f8bda)
+        ;
+
+        
+    
+    
+            var circle_marker_145051f721222626e356b6a5a488ebaa = L.circleMarker(
+                [41.904795870664216, -87.74720875170809],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_d8a9204a82488ba04d98e5b544df2242 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2f113f9aa4b386f87ea6723cb66de12a = $(`<div id="html_2f113f9aa4b386f87ea6723cb66de12a" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312502002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1682<br>                 <b>Med Income:</b> $46,635                 </div>`)[0];
+                popup_d8a9204a82488ba04d98e5b544df2242.setContent(html_2f113f9aa4b386f87ea6723cb66de12a);
+            
+        
+
+        circle_marker_145051f721222626e356b6a5a488ebaa.bindPopup(popup_d8a9204a82488ba04d98e5b544df2242)
+        ;
+
+        
+    
+    
+            var circle_marker_738111a83e868707304153baca9336db = L.circleMarker(
+                [41.90379579510193, -87.73500116825973],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_f573f601ae355d0b6d1f988491dea93c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4832ca1b7223b0b649fed7484b32baf5 = $(`<div id="html_4832ca1b7223b0b649fed7484b32baf5" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312503001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1313<br>                 <b>Med Income:</b> $88,889                 </div>`)[0];
+                popup_f573f601ae355d0b6d1f988491dea93c.setContent(html_4832ca1b7223b0b649fed7484b32baf5);
+            
+        
+
+        circle_marker_738111a83e868707304153baca9336db.bindPopup(popup_f573f601ae355d0b6d1f988491dea93c)
+        ;
+
+        
+    
+    
+            var circle_marker_c7fdd8c999ba0e23c18e27a3be564bcd = L.circleMarker(
+                [41.89557999492453, -87.75608442827526],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9cf25909bae757abc6aa11cc48034bd0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6953091fa9534ad2b8c29ca9cba9420b = $(`<div id="html_6953091fa9534ad2b8c29ca9cba9420b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312503002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1394<br>                 <b>Med Income:</b> $31,250                 </div>`)[0];
+                popup_9cf25909bae757abc6aa11cc48034bd0.setContent(html_6953091fa9534ad2b8c29ca9cba9420b);
+            
+        
+
+        circle_marker_c7fdd8c999ba0e23c18e27a3be564bcd.bindPopup(popup_9cf25909bae757abc6aa11cc48034bd0)
+        ;
+
+        
+    
+    
+            var circle_marker_7e59b6306f8060dc5e9b3003830866db = L.circleMarker(
+                [41.90519208025535, -87.7454971098746],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_117ede9e21c267aeadcead79ccfd3812 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_05b966ef523005f6e257ff706a4627b2 = $(`<div id="html_05b966ef523005f6e257ff706a4627b2" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312503003<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1711<br>                 <b>Med Income:</b> $63,365                 </div>`)[0];
+                popup_117ede9e21c267aeadcead79ccfd3812.setContent(html_05b966ef523005f6e257ff706a4627b2);
+            
+        
+
+        circle_marker_7e59b6306f8060dc5e9b3003830866db.bindPopup(popup_117ede9e21c267aeadcead79ccfd3812)
+        ;
+
+        
+    
+    
+            var circle_marker_8fd1c1750bb9bf8d87e9027beee3e74d = L.circleMarker(
+                [41.906040351217044, -87.74899698635444],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4ed7a72ca8476f7378d4941fafb3b3c3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9ffe06b5c2a7ccf717a8391d26967219 = $(`<div id="html_9ffe06b5c2a7ccf717a8391d26967219" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312503004<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 426<br>                 <b>Med Income:</b> $28,667                 </div>`)[0];
+                popup_4ed7a72ca8476f7378d4941fafb3b3c3.setContent(html_9ffe06b5c2a7ccf717a8391d26967219);
+            
+        
+
+        circle_marker_8fd1c1750bb9bf8d87e9027beee3e74d.bindPopup(popup_4ed7a72ca8476f7378d4941fafb3b3c3)
+        ;
+
+        
+    
+    
+            var circle_marker_df72416fe57f1944c1dbd73f9fb8f224 = L.circleMarker(
+                [41.89714282160771, -87.72422294390861],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_77daeb3ba7572b1037745c961576b09d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6fc442dcada4a065a090e6a2544f8b1b = $(`<div id="html_6fc442dcada4a065a090e6a2544f8b1b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312504001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 414<br>                 <b>Med Income:</b> $42,045                 </div>`)[0];
+                popup_77daeb3ba7572b1037745c961576b09d.setContent(html_6fc442dcada4a065a090e6a2544f8b1b);
+            
+        
+
+        circle_marker_df72416fe57f1944c1dbd73f9fb8f224.bindPopup(popup_77daeb3ba7572b1037745c961576b09d)
+        ;
+
+        
+    
+    
+            var circle_marker_be05462e079a01722ba26599fbb29884 = L.circleMarker(
+                [41.89566491204782, -87.7535790379334],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_8868f729eea6a8ffe6ebb462198b4b74 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d7bc188da8a9602048e8423b1fb1a3bd = $(`<div id="html_d7bc188da8a9602048e8423b1fb1a3bd" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312504002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1338<br>                 <b>Med Income:</b> $28,750                 </div>`)[0];
+                popup_8868f729eea6a8ffe6ebb462198b4b74.setContent(html_d7bc188da8a9602048e8423b1fb1a3bd);
+            
+        
+
+        circle_marker_be05462e079a01722ba26599fbb29884.bindPopup(popup_8868f729eea6a8ffe6ebb462198b4b74)
+        ;
+
+        
+    
+    
+            var circle_marker_41056be9f9ac5c4c0618a4ff6f7057d8 = L.circleMarker(
+                [41.90101982499828, -87.74864485210134],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9c10039d5dfbfec5dfe8c61c24de4ed4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8fad1e79c6f6becff7969925aae0fb29 = $(`<div id="html_8fad1e79c6f6becff7969925aae0fb29" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312504003<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1184<br>                 <b>Med Income:</b> $38,198                 </div>`)[0];
+                popup_9c10039d5dfbfec5dfe8c61c24de4ed4.setContent(html_8fad1e79c6f6becff7969925aae0fb29);
+            
+        
+
+        circle_marker_41056be9f9ac5c4c0618a4ff6f7057d8.bindPopup(popup_9c10039d5dfbfec5dfe8c61c24de4ed4)
+        ;
+
+        
+    
+    
+            var circle_marker_47d7e1752ac73db48b87ed5babd3a62e = L.circleMarker(
+                [41.90282266790817, -87.75577827718482],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9d1b31455deaa3c578436ded2f687bb5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0b3a4413bf06185acc5997c1b3d9b63e = $(`<div id="html_0b3a4413bf06185acc5997c1b3d9b63e" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312504004<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1116<br>                 <b>Med Income:</b> $54,364                 </div>`)[0];
+                popup_9d1b31455deaa3c578436ded2f687bb5.setContent(html_0b3a4413bf06185acc5997c1b3d9b63e);
+            
+        
+
+        circle_marker_47d7e1752ac73db48b87ed5babd3a62e.bindPopup(popup_9d1b31455deaa3c578436ded2f687bb5)
+        ;
+
+        
+    
+    
+            var circle_marker_3c0ce6a85b88910e02cc448c212df6e3 = L.circleMarker(
+                [41.9028173571419, -87.7533592411341],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_c5a2d1cd52114d31b07ec71d1f7c08c6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4ca67acf9dd92931abe04a8e05a338a4 = $(`<div id="html_4ca67acf9dd92931abe04a8e05a338a4" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312504005<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1461<br>                 <b>Med Income:</b> $56,505                 </div>`)[0];
+                popup_c5a2d1cd52114d31b07ec71d1f7c08c6.setContent(html_4ca67acf9dd92931abe04a8e05a338a4);
+            
+        
+
+        circle_marker_3c0ce6a85b88910e02cc448c212df6e3.bindPopup(popup_c5a2d1cd52114d31b07ec71d1f7c08c6)
+        ;
+
+        
+    
+    
+            var circle_marker_bf2f231a1c332a306a6b71ae1abedfe8 = L.circleMarker(
+                [41.905786548626665, -87.74876457451546],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_febe6492dd76ed6487a3a89dc88703df = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_50074c7839fc8b4e61ebd5cb077504cd = $(`<div id="html_50074c7839fc8b4e61ebd5cb077504cd" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 831<br>                 <b>Med Income:</b> $110,227                 </div>`)[0];
+                popup_febe6492dd76ed6487a3a89dc88703df.setContent(html_50074c7839fc8b4e61ebd5cb077504cd);
+            
+        
+
+        circle_marker_bf2f231a1c332a306a6b71ae1abedfe8.bindPopup(popup_febe6492dd76ed6487a3a89dc88703df)
+        ;
+
+        
+    
+    
+            var circle_marker_74f0c00e26faa42d3314e2881fa43a21 = L.circleMarker(
+                [41.90430858222448, -87.75253176306765],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_0ef71cc427a9b9acf56de915f9516e83 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d32d72f92ed91326b6b92369aa2eed2f = $(`<div id="html_d32d72f92ed91326b6b92369aa2eed2f" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 860<br>                 <b>Med Income:</b> $39,679                 </div>`)[0];
+                popup_0ef71cc427a9b9acf56de915f9516e83.setContent(html_d32d72f92ed91326b6b92369aa2eed2f);
+            
+        
+
+        circle_marker_74f0c00e26faa42d3314e2881fa43a21.bindPopup(popup_0ef71cc427a9b9acf56de915f9516e83)
+        ;
+
+        
+    
+    
+            var circle_marker_1982f30ad790da526c0ad2aaae632f0e = L.circleMarker(
+                [41.916041918095615, -87.72899478394413],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_f14476de50e7089f16e4d4e143fa3078 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_39f863fc2dec4cb9e5efd02288f0fb41 = $(`<div id="html_39f863fc2dec4cb9e5efd02288f0fb41" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505003<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 914<br>                 <b>Med Income:</b> $116,319                 </div>`)[0];
+                popup_f14476de50e7089f16e4d4e143fa3078.setContent(html_39f863fc2dec4cb9e5efd02288f0fb41);
+            
+        
+
+        circle_marker_1982f30ad790da526c0ad2aaae632f0e.bindPopup(popup_f14476de50e7089f16e4d4e143fa3078)
+        ;
+
+        
+    
+    
+            var circle_marker_acbe381c094e607966052a8041a01967 = L.circleMarker(
+                [41.89080383129333, -87.75701634013527],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_05df8fde323fe7f7111b0f8cc6f9e161 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_999e18b7d66e5ec17740553064ced303 = $(`<div id="html_999e18b7d66e5ec17740553064ced303" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505004<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1346<br>                 <b>Med Income:</b> $161,288                 </div>`)[0];
+                popup_05df8fde323fe7f7111b0f8cc6f9e161.setContent(html_999e18b7d66e5ec17740553064ced303);
+            
+        
+
+        circle_marker_acbe381c094e607966052a8041a01967.bindPopup(popup_05df8fde323fe7f7111b0f8cc6f9e161)
+        ;
+
+        
+    
+    
+            var circle_marker_418d8bb7ccab63abb026d9b2a0c7a1df = L.circleMarker(
+                [41.89782905835134, -87.73509801046931],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_7a3fc3146c17ec00e96b7011c81a25f3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6bdf8c08c4faeb61f54304372dea65ee = $(`<div id="html_6bdf8c08c4faeb61f54304372dea65ee" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505005<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 1<br>                 <b>Pop:</b> 1248<br>                 <b>Med Income:</b> $153,320                 </div>`)[0];
+                popup_7a3fc3146c17ec00e96b7011c81a25f3.setContent(html_6bdf8c08c4faeb61f54304372dea65ee);
+            
+        
+
+        circle_marker_418d8bb7ccab63abb026d9b2a0c7a1df.bindPopup(popup_7a3fc3146c17ec00e96b7011c81a25f3)
+        ;
+
+        
+    
+    
+            var circle_marker_f55a127289f712ca26d63e46b70b53ee = L.circleMarker(
+                [41.89629247439416, -87.7509982001273],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_a75b3258704ebb464ceee1ebcc62d615 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c77cc7746c32fc31dfa51e032078305b = $(`<div id="html_c77cc7746c32fc31dfa51e032078305b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505006<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 695<br>                 <b>Med Income:</b> $55,735                 </div>`)[0];
+                popup_a75b3258704ebb464ceee1ebcc62d615.setContent(html_c77cc7746c32fc31dfa51e032078305b);
+            
+        
+
+        circle_marker_f55a127289f712ca26d63e46b70b53ee.bindPopup(popup_a75b3258704ebb464ceee1ebcc62d615)
+        ;
+
+        
+    
+    
+            var circle_marker_2e3fced179e1f6bbfefd021b86a0b214 = L.circleMarker(
+                [41.890586269711186, -87.75083432665483],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_ae177dadf0ec70cbd8f67db33ad29880 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ac0ea2a9bfd59ed4831dae71f1d0d56e = $(`<div id="html_ac0ea2a9bfd59ed4831dae71f1d0d56e" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312505007<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1009<br>                 <b>Med Income:</b> $149,728                 </div>`)[0];
+                popup_ae177dadf0ec70cbd8f67db33ad29880.setContent(html_ac0ea2a9bfd59ed4831dae71f1d0d56e);
+            
+        
+
+        circle_marker_2e3fced179e1f6bbfefd021b86a0b214.bindPopup(popup_ae177dadf0ec70cbd8f67db33ad29880)
+        ;
+
+        
+    
+    
+            var circle_marker_77ba09f04d32f644b13a6b16dd13bbad = L.circleMarker(
+                [41.92506362691422, -87.74894800417492],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_502b2f56a80c020eea2dfe1562fdbe19 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c5d7ff2efc5ce073686dd236343ca6b5 = $(`<div id="html_c5d7ff2efc5ce073686dd236343ca6b5" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312506001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1188<br>                 <b>Med Income:</b> $81,917                 </div>`)[0];
+                popup_502b2f56a80c020eea2dfe1562fdbe19.setContent(html_c5d7ff2efc5ce073686dd236343ca6b5);
+            
+        
+
+        circle_marker_77ba09f04d32f644b13a6b16dd13bbad.bindPopup(popup_502b2f56a80c020eea2dfe1562fdbe19)
+        ;
+
+        
+    
+    
+            var circle_marker_61e7427950fd15e2eb7a60085ac8f378 = L.circleMarker(
+                [41.88735511570074, -87.75104166816061],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_8932778e5bd471d54223a93cbff4c09a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7c508916301a8c66d16abda32213bb34 = $(`<div id="html_7c508916301a8c66d16abda32213bb34" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312506002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1143<br>                 <b>Med Income:</b> $79,698                 </div>`)[0];
+                popup_8932778e5bd471d54223a93cbff4c09a.setContent(html_7c508916301a8c66d16abda32213bb34);
+            
+        
+
+        circle_marker_61e7427950fd15e2eb7a60085ac8f378.bindPopup(popup_8932778e5bd471d54223a93cbff4c09a)
+        ;
+
+        
+    
+    
+            var circle_marker_8cc4fa152a648212444bb8228c544ab3 = L.circleMarker(
+                [41.90747028134401, -87.74967349052886],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_23771e0419ab91c23bcb34e653da0a9f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ee79b1252fcf69d443574c2922248ce0 = $(`<div id="html_ee79b1252fcf69d443574c2922248ce0" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312506003<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 896<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_23771e0419ab91c23bcb34e653da0a9f.setContent(html_ee79b1252fcf69d443574c2922248ce0);
+            
+        
+
+        circle_marker_8cc4fa152a648212444bb8228c544ab3.bindPopup(popup_23771e0419ab91c23bcb34e653da0a9f)
+        ;
+
+        
+    
+    
+            var circle_marker_323853256603bb36810f0fd4b9d64c49 = L.circleMarker(
+                [41.89232611996905, -87.73571853307692],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4c2f535ee1f98eefff6567b03022a12e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d3f0b39f7a0327ab50a4d62acc70bdc3 = $(`<div id="html_d3f0b39f7a0327ab50a4d62acc70bdc3" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312506004<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1315<br>                 <b>Med Income:</b> $61,500                 </div>`)[0];
+                popup_4c2f535ee1f98eefff6567b03022a12e.setContent(html_d3f0b39f7a0327ab50a4d62acc70bdc3);
+            
+        
+
+        circle_marker_323853256603bb36810f0fd4b9d64c49.bindPopup(popup_4c2f535ee1f98eefff6567b03022a12e)
+        ;
+
+        
+    
+    
+            var circle_marker_1317f189c45d6ca1f49722988fe6c6a5 = L.circleMarker(
+                [41.90184266174867, -87.749870061617],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_35e48d40029b9d8e664a7ece899255d2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_77638c63d8839ce61ad805b9e8823b11 = $(`<div id="html_77638c63d8839ce61ad805b9e8823b11" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312507001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 755<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_35e48d40029b9d8e664a7ece899255d2.setContent(html_77638c63d8839ce61ad805b9e8823b11);
+            
+        
+
+        circle_marker_1317f189c45d6ca1f49722988fe6c6a5.bindPopup(popup_35e48d40029b9d8e664a7ece899255d2)
+        ;
+
+        
+    
+    
+            var circle_marker_8885dcff7ea6802ca4d4b80f2e156333 = L.circleMarker(
+                [41.88831556087307, -87.7485274203994],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_c2aff448f2513a80b77f7f69ce618fd3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_773370f8869efed576868a7684f1585b = $(`<div id="html_773370f8869efed576868a7684f1585b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312507002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1100<br>                 <b>Med Income:</b> $57,549                 </div>`)[0];
+                popup_c2aff448f2513a80b77f7f69ce618fd3.setContent(html_773370f8869efed576868a7684f1585b);
+            
+        
+
+        circle_marker_8885dcff7ea6802ca4d4b80f2e156333.bindPopup(popup_c2aff448f2513a80b77f7f69ce618fd3)
+        ;
+
+        
+    
+    
+            var circle_marker_c991a19c4630ecb047d8cacb8375ce9d = L.circleMarker(
+                [41.91490144642253, -87.75669575157355],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_6285ac6cb82b190d4b8401b517a5df61 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a4f8cffbac787d12257ffff87bfd5e38 = $(`<div id="html_a4f8cffbac787d12257ffff87bfd5e38" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312507003<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1485<br>                 <b>Med Income:</b> $43,560                 </div>`)[0];
+                popup_6285ac6cb82b190d4b8401b517a5df61.setContent(html_a4f8cffbac787d12257ffff87bfd5e38);
+            
+        
+
+        circle_marker_c991a19c4630ecb047d8cacb8375ce9d.bindPopup(popup_6285ac6cb82b190d4b8401b517a5df61)
+        ;
+
+        
+    
+    
+            var circle_marker_cb029a7dff54c1ca6653f0d6b6fd6ce0 = L.circleMarker(
+                [41.89888967902785, -87.75116419374106],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_3789ba207b9a0c79691ea917c96cc7b2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f6f997326ef7959845829afb313c5e28 = $(`<div id="html_f6f997326ef7959845829afb313c5e28" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312507004<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1711<br>                 <b>Med Income:</b> $50,927                 </div>`)[0];
+                popup_3789ba207b9a0c79691ea917c96cc7b2.setContent(html_f6f997326ef7959845829afb313c5e28);
+            
+        
+
+        circle_marker_cb029a7dff54c1ca6653f0d6b6fd6ce0.bindPopup(popup_3789ba207b9a0c79691ea917c96cc7b2)
+        ;
+
+        
+    
+    
+            var circle_marker_d9fc6cef4d6d086b8c5c7621eee71824 = L.circleMarker(
+                [41.893006247867504, -87.74026743250168],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_7457794cc7983453092a3feef1f1aa1f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0d6073ca91863476c00b1555c9fdb05e = $(`<div id="html_0d6073ca91863476c00b1555c9fdb05e" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312507005<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1415<br>                 <b>Med Income:</b> $44,540                 </div>`)[0];
+                popup_7457794cc7983453092a3feef1f1aa1f.setContent(html_0d6073ca91863476c00b1555c9fdb05e);
+            
+        
+
+        circle_marker_d9fc6cef4d6d086b8c5c7621eee71824.bindPopup(popup_7457794cc7983453092a3feef1f1aa1f)
+        ;
+
+        
+    
+    
+            var circle_marker_e646e13f0667e715b912e47c07ecaca3 = L.circleMarker(
+                [41.922209228544745, -87.74159042576447],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_521fc400fe479f0196b1111002811bb7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7de24c8817c2ea94071230df5bf5ac11 = $(`<div id="html_7de24c8817c2ea94071230df5bf5ac11" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312508001<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1138<br>                 <b>Med Income:</b> $63,958                 </div>`)[0];
+                popup_521fc400fe479f0196b1111002811bb7.setContent(html_7de24c8817c2ea94071230df5bf5ac11);
+            
+        
+
+        circle_marker_e646e13f0667e715b912e47c07ecaca3.bindPopup(popup_521fc400fe479f0196b1111002811bb7)
+        ;
+
+        
+    
+    
+            var circle_marker_fbdca81565917be2639e69008addc8fa = L.circleMarker(
+                [41.906082010967694, -87.7566912301911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_bd45b3901d0c33a361959d380eb666fd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b7e091107322b6d40318233c8b9af947 = $(`<div id="html_b7e091107322b6d40318233c8b9af947" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170312508002<br>                 <b>CA:</b> Austin<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1555<br>                 <b>Med Income:</b> $52,917                 </div>`)[0];
+                popup_bd45b3901d0c33a361959d380eb666fd.setContent(html_b7e091107322b6d40318233c8b9af947);
+            
+        
+
+        circle_marker_fbdca81565917be2639e69008addc8fa.bindPopup(popup_bd45b3901d0c33a361959d380eb666fd)
+        ;
+
+        
+    
+    
+            var circle_marker_3ebdfca1da4e1b769fc29624038fe9e2 = L.circleMarker(
+                [41.697327037086396, -87.63222013951876],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_f1fc243ad131fae621bdd4a407c37a50 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6b1324b55cf71c311f0b417c428dd795 = $(`<div id="html_6b1324b55cf71c311f0b417c428dd795" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315301001<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1078<br>                 <b>Med Income:</b> $43,523                 </div>`)[0];
+                popup_f1fc243ad131fae621bdd4a407c37a50.setContent(html_6b1324b55cf71c311f0b417c428dd795);
+            
+        
+
+        circle_marker_3ebdfca1da4e1b769fc29624038fe9e2.bindPopup(popup_f1fc243ad131fae621bdd4a407c37a50)
+        ;
+
+        
+    
+    
+            var circle_marker_5670cc8ab9e2536e6fbce0d504a25b1b = L.circleMarker(
+                [41.70309532258493, -87.63686485104637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4c1c1bd4eadcc5bdfcead1ac53527420 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_327223ea37ecabe94fc18ed5c35d8b93 = $(`<div id="html_327223ea37ecabe94fc18ed5c35d8b93" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315301002<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 837<br>                 <b>Med Income:</b> $28,538                 </div>`)[0];
+                popup_4c1c1bd4eadcc5bdfcead1ac53527420.setContent(html_327223ea37ecabe94fc18ed5c35d8b93);
+            
+        
+
+        circle_marker_5670cc8ab9e2536e6fbce0d504a25b1b.bindPopup(popup_4c1c1bd4eadcc5bdfcead1ac53527420)
+        ;
+
+        
+    
+    
+            var circle_marker_5b111abfafd424b03303b2646d4c869c = L.circleMarker(
+                [41.7048247168697, -87.63500465854543],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_7beee59e705faa47668170eb775cecab = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f9ddc71b5bb896f60023b86c47a5b3f7 = $(`<div id="html_f9ddc71b5bb896f60023b86c47a5b3f7" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315302001<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 523<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_7beee59e705faa47668170eb775cecab.setContent(html_f9ddc71b5bb896f60023b86c47a5b3f7);
+            
+        
+
+        circle_marker_5b111abfafd424b03303b2646d4c869c.bindPopup(popup_7beee59e705faa47668170eb775cecab)
+        ;
+
+        
+    
+    
+            var circle_marker_4f0e915c121096a27153ce04e37a1376 = L.circleMarker(
+                [41.69522150793805, -87.63107591951763],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_dbf15309eceb58361dd6afc9797e26d6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_863979c4917ff49f2b47d76cbeb4f120 = $(`<div id="html_863979c4917ff49f2b47d76cbeb4f120" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315302002<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 323<br>                 <b>Med Income:</b> $77,821                 </div>`)[0];
+                popup_dbf15309eceb58361dd6afc9797e26d6.setContent(html_863979c4917ff49f2b47d76cbeb4f120);
+            
+        
+
+        circle_marker_4f0e915c121096a27153ce04e37a1376.bindPopup(popup_dbf15309eceb58361dd6afc9797e26d6)
+        ;
+
+        
+    
+    
+            var circle_marker_0496e8f4d016f85e0047d993b6ecfa44 = L.circleMarker(
+                [41.68437123629801, -87.61061170999001],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9d6f1d510c41aa67cc64aac937211bd0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9944ba3eaf01dff7bbc3a0fbd68d62c6 = $(`<div id="html_9944ba3eaf01dff7bbc3a0fbd68d62c6" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315302003<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 107<br>                 <b>Med Income:</b> $79,519                 </div>`)[0];
+                popup_9d6f1d510c41aa67cc64aac937211bd0.setContent(html_9944ba3eaf01dff7bbc3a0fbd68d62c6);
+            
+        
+
+        circle_marker_0496e8f4d016f85e0047d993b6ecfa44.bindPopup(popup_9d6f1d510c41aa67cc64aac937211bd0)
+        ;
+
+        
+    
+    
+            var circle_marker_a42cdf4cd70dea71f3daae652f9bf2a7 = L.circleMarker(
+                [41.70068325838566, -87.61731545207668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_51a0fa0c8417020f4b58013724c4fab3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d43760fbe9c60479e8eb6ebcad9ca759 = $(`<div id="html_d43760fbe9c60479e8eb6ebcad9ca759" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315302004<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1566<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_51a0fa0c8417020f4b58013724c4fab3.setContent(html_d43760fbe9c60479e8eb6ebcad9ca759);
+            
+        
+
+        circle_marker_a42cdf4cd70dea71f3daae652f9bf2a7.bindPopup(popup_51a0fa0c8417020f4b58013724c4fab3)
+        ;
+
+        
+    
+    
+            var circle_marker_20b2a43dfdb904be5cf26d77291621ff = L.circleMarker(
+                [41.685795105660596, -87.63958265845166],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_141188816a580fc4e6bcdc3e6d528816 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_add91538fbbd1530bdb3b576838acbac = $(`<div id="html_add91538fbbd1530bdb3b576838acbac" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315302005<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1839<br>                 <b>Med Income:</b> $35,179                 </div>`)[0];
+                popup_141188816a580fc4e6bcdc3e6d528816.setContent(html_add91538fbbd1530bdb3b576838acbac);
+            
+        
+
+        circle_marker_20b2a43dfdb904be5cf26d77291621ff.bindPopup(popup_141188816a580fc4e6bcdc3e6d528816)
+        ;
+
+        
+    
+    
+            var circle_marker_863a69ca1fa06b6860b0d23adac38864 = L.circleMarker(
+                [41.69888701145309, -87.61983911416415],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_df783614ac65791f8c8061ec6757f134 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_56b8e290fa953cc1e29935000fc9281b = $(`<div id="html_56b8e290fa953cc1e29935000fc9281b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315303001<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 670<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_df783614ac65791f8c8061ec6757f134.setContent(html_56b8e290fa953cc1e29935000fc9281b);
+            
+        
+
+        circle_marker_863a69ca1fa06b6860b0d23adac38864.bindPopup(popup_df783614ac65791f8c8061ec6757f134)
+        ;
+
+        
+    
+    
+            var circle_marker_73841e69ded8a4378856f1224e216fa2 = L.circleMarker(
+                [41.678772585677265, -87.6267491466274],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_8a268531088e251bf0255cafade0d22a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_527465da35ef444e903dcb868e6c8b83 = $(`<div id="html_527465da35ef444e903dcb868e6c8b83" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315303002<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 515<br>                 <b>Med Income:</b> $70,377                 </div>`)[0];
+                popup_8a268531088e251bf0255cafade0d22a.setContent(html_527465da35ef444e903dcb868e6c8b83);
+            
+        
+
+        circle_marker_73841e69ded8a4378856f1224e216fa2.bindPopup(popup_8a268531088e251bf0255cafade0d22a)
+        ;
+
+        
+    
+    
+            var circle_marker_387ddb2f48c923afad0b8a7b4ad254d7 = L.circleMarker(
+                [41.6986521130218, -87.63774540180947],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_22249b0409d3e88da238fe19f86be8f5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4afa1c2c8d4ccb9eca0d97c3c35af81a = $(`<div id="html_4afa1c2c8d4ccb9eca0d97c3c35af81a" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315303003<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 887<br>                 <b>Med Income:</b> $29,839                 </div>`)[0];
+                popup_22249b0409d3e88da238fe19f86be8f5.setContent(html_4afa1c2c8d4ccb9eca0d97c3c35af81a);
+            
+        
+
+        circle_marker_387ddb2f48c923afad0b8a7b4ad254d7.bindPopup(popup_22249b0409d3e88da238fe19f86be8f5)
+        ;
+
+        
+    
+    
+            var circle_marker_6276af7aabe3074c91eccaa3f7b663b9 = L.circleMarker(
+                [41.698098071008516, -87.63757201455682],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_a15bced844c1e20d680007f305e8a2cf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d24063eb1bf048bf457118aa4c950b32 = $(`<div id="html_d24063eb1bf048bf457118aa4c950b32" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315303004<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1412<br>                 <b>Med Income:</b> $54,139                 </div>`)[0];
+                popup_a15bced844c1e20d680007f305e8a2cf.setContent(html_d24063eb1bf048bf457118aa4c950b32);
+            
+        
+
+        circle_marker_6276af7aabe3074c91eccaa3f7b663b9.bindPopup(popup_a15bced844c1e20d680007f305e8a2cf)
+        ;
+
+        
+    
+    
+            var circle_marker_48c4a8b2dc1c635a096160b931847555 = L.circleMarker(
+                [41.69830436482575, -87.63321850644593],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9c8627b863252bdd50b347c01cc1e24e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4943dd4948301012a2de2c2dae928d54 = $(`<div id="html_4943dd4948301012a2de2c2dae928d54" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315304001<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 985<br>                 <b>Med Income:</b> $67,014                 </div>`)[0];
+                popup_9c8627b863252bdd50b347c01cc1e24e.setContent(html_4943dd4948301012a2de2c2dae928d54);
+            
+        
+
+        circle_marker_48c4a8b2dc1c635a096160b931847555.bindPopup(popup_9c8627b863252bdd50b347c01cc1e24e)
+        ;
+
+        
+    
+    
+            var circle_marker_958d05ff6e615aef73ebf49093ddc3a9 = L.circleMarker(
+                [41.687997762135346, -87.62914246874895],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_fc6d71dd55da6f1ea4116277ff5ab911 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ecbd0c201f52140ff100a19a7fe40adc = $(`<div id="html_ecbd0c201f52140ff100a19a7fe40adc" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170315304002<br>                 <b>CA:</b> West Pullman<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1371<br>                 <b>Med Income:</b> $86,531                 </div>`)[0];
+                popup_fc6d71dd55da6f1ea4116277ff5ab911.setContent(html_ecbd0c201f52140ff100a19a7fe40adc);
+            
+        
+
+        circle_marker_958d05ff6e615aef73ebf49093ddc3a9.bindPopup(popup_fc6d71dd55da6f1ea4116277ff5ab911)
+        ;
+
+        
+    
+    
+            var circle_marker_1f2e03e4eb198c6f6b6ecf85c09392d1 = L.circleMarker(
+                [41.80228108819257, -87.73232882416072],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_9fbb9489739bbad61ffd1f9a0c97f0b0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f0ba4629d8a75641f36107be1742e029 = $(`<div id="html_f0ba4629d8a75641f36107be1742e029" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316201001<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 2206<br>                 <b>Med Income:</b> $58,033                 </div>`)[0];
+                popup_9fbb9489739bbad61ffd1f9a0c97f0b0.setContent(html_f0ba4629d8a75641f36107be1742e029);
+            
+        
+
+        circle_marker_1f2e03e4eb198c6f6b6ecf85c09392d1.bindPopup(popup_9fbb9489739bbad61ffd1f9a0c97f0b0)
+        ;
+
+        
+    
+    
+            var circle_marker_53e2cebe092579417160f785b4ce962d = L.circleMarker(
+                [41.78998189431342, -87.73225560010391],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_5461fac123617748602e8066bf45f004 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fbbdb1f91b53fa668f9f45946d18e7cc = $(`<div id="html_fbbdb1f91b53fa668f9f45946d18e7cc" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316201002<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1937<br>                 <b>Med Income:</b> $99,000                 </div>`)[0];
+                popup_5461fac123617748602e8066bf45f004.setContent(html_fbbdb1f91b53fa668f9f45946d18e7cc);
+            
+        
+
+        circle_marker_53e2cebe092579417160f785b4ce962d.bindPopup(popup_5461fac123617748602e8066bf45f004)
+        ;
+
+        
+    
+    
+            var circle_marker_42c936e91d2851777e2bfaa92723bc92 = L.circleMarker(
+                [41.79578478615143, -87.73326178112154],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_0071ba7e8e21b835dff3e6f461406275 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ae75c5b14a1e72e390ff433fb28bbb81 = $(`<div id="html_ae75c5b14a1e72e390ff433fb28bbb81" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316201003<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 655<br>                 <b>Med Income:</b> $nan                 </div>`)[0];
+                popup_0071ba7e8e21b835dff3e6f461406275.setContent(html_ae75c5b14a1e72e390ff433fb28bbb81);
+            
+        
+
+        circle_marker_42c936e91d2851777e2bfaa92723bc92.bindPopup(popup_0071ba7e8e21b835dff3e6f461406275)
+        ;
+
+        
+    
+    
+            var circle_marker_4739ccdb255c819a6e190da4b5790d7e = L.circleMarker(
+                [41.79543099773949, -87.72808678369034],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_cc6f9559acca9370de96789e44cb2107 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d343ac130e1fefa692cf00351049fcd = $(`<div id="html_2d343ac130e1fefa692cf00351049fcd" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316202001<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 793<br>                 <b>Med Income:</b> $67,440                 </div>`)[0];
+                popup_cc6f9559acca9370de96789e44cb2107.setContent(html_2d343ac130e1fefa692cf00351049fcd);
+            
+        
+
+        circle_marker_4739ccdb255c819a6e190da4b5790d7e.bindPopup(popup_cc6f9559acca9370de96789e44cb2107)
+        ;
+
+        
+    
+    
+            var circle_marker_57dca3ff025382f1c1b321e390569f3b = L.circleMarker(
+                [41.80024254236348, -87.70498577247487],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4bd6fa2dc1deaa052906d3e56e26e27b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4409b99b39fb26e6271f425439495e5d = $(`<div id="html_4409b99b39fb26e6271f425439495e5d" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316202002<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1155<br>                 <b>Med Income:</b> $49,402                 </div>`)[0];
+                popup_4bd6fa2dc1deaa052906d3e56e26e27b.setContent(html_4409b99b39fb26e6271f425439495e5d);
+            
+        
+
+        circle_marker_57dca3ff025382f1c1b321e390569f3b.bindPopup(popup_4bd6fa2dc1deaa052906d3e56e26e27b)
+        ;
+
+        
+    
+    
+            var circle_marker_397091b9743f083051ba121a0e5155de = L.circleMarker(
+                [41.798322350602, -87.72556281737889],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_0ae0ae0a72cefddfa336ea5a6f5aad4d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_61d8bf2a1e1f02f6fd2c0d50dd1f004b = $(`<div id="html_61d8bf2a1e1f02f6fd2c0d50dd1f004b" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203001<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1323<br>                 <b>Med Income:</b> $68,264                 </div>`)[0];
+                popup_0ae0ae0a72cefddfa336ea5a6f5aad4d.setContent(html_61d8bf2a1e1f02f6fd2c0d50dd1f004b);
+            
+        
+
+        circle_marker_397091b9743f083051ba121a0e5155de.bindPopup(popup_0ae0ae0a72cefddfa336ea5a6f5aad4d)
+        ;
+
+        
+    
+    
+            var circle_marker_13bff2587463bf440da19f6ea7d25436 = L.circleMarker(
+                [41.790950619349054, -87.71855757861478],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_5db4cbd67a4a97b7a2984bdff48262a5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d09e3d97040bdf782611f030df3dadb = $(`<div id="html_2d09e3d97040bdf782611f030df3dadb" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203002<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1327<br>                 <b>Med Income:</b> $134,297                 </div>`)[0];
+                popup_5db4cbd67a4a97b7a2984bdff48262a5.setContent(html_2d09e3d97040bdf782611f030df3dadb);
+            
+        
+
+        circle_marker_13bff2587463bf440da19f6ea7d25436.bindPopup(popup_5db4cbd67a4a97b7a2984bdff48262a5)
+        ;
+
+        
+    
+    
+            var circle_marker_a8eca733ac75762d27f2892ba585167d = L.circleMarker(
+                [41.79874410308337, -87.72471576147048],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_232b0dca787c287a74a712c83b78d53d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f32fe8fd6ddc6ffc844f8b5960fc4cab = $(`<div id="html_f32fe8fd6ddc6ffc844f8b5960fc4cab" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203003<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1002<br>                 <b>Med Income:</b> $66,042                 </div>`)[0];
+                popup_232b0dca787c287a74a712c83b78d53d.setContent(html_f32fe8fd6ddc6ffc844f8b5960fc4cab);
+            
+        
+
+        circle_marker_a8eca733ac75762d27f2892ba585167d.bindPopup(popup_232b0dca787c287a74a712c83b78d53d)
+        ;
+
+        
+    
+    
+            var circle_marker_c0bab632d5fc2adb17b1b29cbd428f6a = L.circleMarker(
+                [41.78198497626067, -87.7373825445326],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_4ae5b6b723217a019558ed9d37f150e0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b6c256d205970de19a2b0513cfeffe38 = $(`<div id="html_b6c256d205970de19a2b0513cfeffe38" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203004<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 978<br>                 <b>Med Income:</b> $56,548                 </div>`)[0];
+                popup_4ae5b6b723217a019558ed9d37f150e0.setContent(html_b6c256d205970de19a2b0513cfeffe38);
+            
+        
+
+        circle_marker_c0bab632d5fc2adb17b1b29cbd428f6a.bindPopup(popup_4ae5b6b723217a019558ed9d37f150e0)
+        ;
+
+        
+    
+    
+            var circle_marker_fb92e11f9ffb74868733b40551496ebf = L.circleMarker(
+                [41.78664774320108, -87.72423059934982],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_c3ef173d0ee5f34726750aa7801af93e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ca162c9088c4fb31ad8a4f677af318ca = $(`<div id="html_ca162c9088c4fb31ad8a4f677af318ca" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203005<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 795<br>                 <b>Med Income:</b> $165,709                 </div>`)[0];
+                popup_c3ef173d0ee5f34726750aa7801af93e.setContent(html_ca162c9088c4fb31ad8a4f677af318ca);
+            
+        
+
+        circle_marker_fb92e11f9ffb74868733b40551496ebf.bindPopup(popup_c3ef173d0ee5f34726750aa7801af93e)
+        ;
+
+        
+    
+    
+            var circle_marker_cbad1e868b1ad9b1db2af2ca37ee3a4e = L.circleMarker(
+                [41.7924656103181, -87.727492152504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_29d800472546904149d5b6e6e20ddcb6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ec73f833ff6947130b88c39a89d872db = $(`<div id="html_ec73f833ff6947130b88c39a89d872db" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316203006<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 0<br>                 <b>Pop:</b> 1655<br>                 <b>Med Income:</b> $47,696                 </div>`)[0];
+                popup_29d800472546904149d5b6e6e20ddcb6.setContent(html_ec73f833ff6947130b88c39a89d872db);
+            
+        
+
+        circle_marker_cbad1e868b1ad9b1db2af2ca37ee3a4e.bindPopup(popup_29d800472546904149d5b6e6e20ddcb6)
+        ;
+
+        
+    
+    
+            var circle_marker_ccf017848b95c779b4d785c0281157e1 = L.circleMarker(
+                [41.787035692329056, -87.72846862865462],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_590f814582e13a9c05516691f613b178 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8a8d06cf93ae415a808f0fc1246d8094 = $(`<div id="html_8a8d06cf93ae415a808f0fc1246d8094" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316204001<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1070<br>                 <b>Med Income:</b> $53,816                 </div>`)[0];
+                popup_590f814582e13a9c05516691f613b178.setContent(html_8a8d06cf93ae415a808f0fc1246d8094);
+            
+        
+
+        circle_marker_ccf017848b95c779b4d785c0281157e1.bindPopup(popup_590f814582e13a9c05516691f613b178)
+        ;
+
+        
+    
+    
+            var circle_marker_c6d257eb8211bb20c23c2dac0953ff3c = L.circleMarker(
+                [41.795531243709014, -87.71126616543818],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_e0f1fe61e392be3095ce0a9639347d7d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_912e5a6ee5d092c605e5a8aa4c6ae870 = $(`<div id="html_912e5a6ee5d092c605e5a8aa4c6ae870" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316204002<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1485<br>                 <b>Med Income:</b> $53,705                 </div>`)[0];
+                popup_e0f1fe61e392be3095ce0a9639347d7d.setContent(html_912e5a6ee5d092c605e5a8aa4c6ae870);
+            
+        
+
+        circle_marker_c6d257eb8211bb20c23c2dac0953ff3c.bindPopup(popup_e0f1fe61e392be3095ce0a9639347d7d)
+        ;
+
+        
+    
+    
+            var circle_marker_0ab5a08cf8bae511bbc1566d9ba61297 = L.circleMarker(
+                [41.79141239891585, -87.73495744833797],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_e6007ce2af1ce7e086b09c8c486b2de2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_15ef8e646b1efa47eb90aac16c4eee73 = $(`<div id="html_15ef8e646b1efa47eb90aac16c4eee73" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316204003<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 926<br>                 <b>Med Income:</b> $79,492                 </div>`)[0];
+                popup_e6007ce2af1ce7e086b09c8c486b2de2.setContent(html_15ef8e646b1efa47eb90aac16c4eee73);
+            
+        
+
+        circle_marker_0ab5a08cf8bae511bbc1566d9ba61297.bindPopup(popup_e6007ce2af1ce7e086b09c8c486b2de2)
+        ;
+
+        
+    
+    
+            var circle_marker_b99f03e8071e9e5b10355cfb0befb321 = L.circleMarker(
+                [41.7918078111627, -87.72219759125713],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_1150bd5e600036e8bc51fa4f1c084b8a);
+        
+    
+        var popup_c69483ba4e96d4b5459d112adea10959 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fb3061e9d461af99121f4a95a4ffa93f = $(`<div id="html_fb3061e9d461af99121f4a95a4ffa93f" style="width: 100.0%; height: 100.0%;">                 <b>Block Group:</b> 170316204004<br>                 <b>CA:</b> West Elsdon<br>                 <b>Community:</b> 2<br>                 <b>Pop:</b> 1059<br>                 <b>Med Income:</b> $28,914                 </div>`)[0];
+                popup_c69483ba4e96d4b5459d112adea10959.setContent(html_fb3061e9d461af99121f4a95a4ffa93f);
+            
+        
+
+        circle_marker_b99f03e8071e9e5b10355cfb0befb321.bindPopup(popup_c69483ba4e96d4b5459d112adea10959)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,219 @@
+
+================================================================================
+CS 579 FINAL PROJECT REPORT
+Data-Driven Community Boundaries Across Chicago
+================================================================================
+
+Team Members:
+- Melissa Mey Y. Laiz (CA 15: Portage Park)
+- Pranav Kuchibhotla (CA 62: West Elsdon)
+- Chilla Sai Krishna Reddy (CA 53: West Pullman)
+- Krystian Szczepankiewicz (CA 25: Austin)
+
+Date: November 29, 2025
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+This project explores data-driven community boundaries in Chicago by integrating
+socioeconomic data from four diverse Community Areas (CAs) and applying network
+analysis to detect natural neighborhood clusters that transcend official boundaries.
+
+Key Findings:
+1. 27.3% of social network connections cross official CA boundaries
+2. Detected 3 data-driven communities with Q=0.551
+3. Significant temporal changes (2014-2022) in key socioeconomic indicators
+4. Official administrative boundaries poorly align with on-the-ground social structure
+
+================================================================================
+DATA COLLECTION
+================================================================================
+
+Data Sources:
+- American Community Survey (ACS) 5-Year Estimates
+- Years: 2014 and 2022
+- Geographic Level: Census Block Groups
+- Total Block Groups (2022): 83
+- Total Block Groups (2014): 83
+
+Community Areas Analyzed:
+- CA 15 (Portage Park): 26 block groups (2022), 26 (2014)
+- CA 25 (Austin): 29 block groups (2022), 29 (2014)
+- CA 53 (West Pullman): 13 block groups (2022), 13 (2014)
+- CA 62 (West Elsdon): 15 block groups (2022), 15 (2014)
+
+Variables Used (10 features):
+- share_white
+- share_black
+- share_hispanic
+- share_ba_plus
+- renter_share
+- homeownership_rate
+- med_income_log
+- med_rent_log
+- vacancy_rate
+- walk_to_work_share
+
+================================================================================
+NETWORK ANALYSIS
+================================================================================
+
+Network Structure (2022):
+- Total Nodes (Block Groups): 83
+- Total Edges (Connections): 396
+- Network Density: 0.1164
+- Within-CA Edges: 288
+- Cross-CA Edges: 108 (27.3%)
+
+Key Finding: Nearly 1 in 3 social connections cross official CA boundaries,
+suggesting that administrative divisions do not reflect actual community structure.
+
+================================================================================
+COMMUNITY DETECTION
+================================================================================
+
+Louvain Algorithm:
+- Communities Detected: 3
+- Modularity Score: 0.551
+- Interpretation: Strong community structure detected
+
+Leiden Algorithm:
+- Communities Detected: 4
+- Modularity Score: 0.586
+- Comparison: Similar structure vs Louvain
+
+================================================================================
+TEMPORAL ANALYSIS (2014 vs 2022)
+================================================================================
+
+Med Income:
+  2014: 45508.0000
+  2022: 79505.5000
+  Change: +74.71%
+
+Share Ba Plus:
+  2014: 0.1520
+  2022: 0.2610
+  Change: +71.77%
+
+Homeownership Rate:
+  2014: 0.7409
+  2022: 0.7679
+  Change: +3.64%
+
+Vacancy Rate:
+  2014: 0.0906
+  2022: 0.0949
+  Change: +4.75%
+
+================================================================================
+METHODOLOGY
+================================================================================
+
+1. Data Collection:
+   - Fetched ACS 5-year estimates for 2014 and 2022
+   - Collected data for ~83 block groups across 4 CAs
+   
+2. Feature Engineering:
+   - Computed demographic shares (race/ethnicity)
+   - Calculated education attainment rates
+   - Derived housing characteristics
+   - Normalized income and rent (log transformation)
+   
+3. Network Construction:
+   - k-NN similarity network (k=10)
+   - Cosine similarity on standardized features
+   - Missing values imputed with median
+   
+4. Community Detection:
+   - Louvain (greedy modularity optimization)
+   - Leiden (higher quality, if available)
+   
+5. Visualization:
+   - Static network diagrams
+   - Interactive Folium maps
+   - Temporal comparison charts
+
+================================================================================
+CONCLUSIONS
+================================================================================
+
+1. Official Boundaries Don't Match Reality:
+   27.3% of connections cross CA lines, showing that people's 
+   actual social and economic networks transcend administrative divisions.
+
+2. Strong Natural Communities Exist:
+   Modularity of 0.551 indicates clear community structure that
+   doesn't align with official CA boundaries.
+
+3. Neighborhoods Are Dynamic:
+   Temporal analysis shows significant changes in socioeconomic composition
+   between 2014 and 2022, suggesting neighborhoods evolve faster than
+   administrative boundaries change.
+
+4. Multi-Dimensional Clustering:
+   Communities form based on multiple factors (income, education, housing,
+   demographics) rather than single characteristics.
+
+================================================================================
+LIMITATIONS & FUTURE WORK
+================================================================================
+
+Limitations:
+- Census block group data may mask within-BG variation
+- Limited to 4 CAs due to scope constraints
+- No crime or transit data integrated
+- Simplified spatial relationships (k-NN vs true geography)
+
+Future Extensions:
+- Expand to all 77 Chicago CAs
+- Integrate crime statistics from Chicago Data Portal
+- Add transit accessibility (CTA stops, bus routes)
+- Incorporate actual geographic distances
+- Time-series analysis (multiple years)
+- Validation with qualitative neighborhood surveys
+
+================================================================================
+TECHNICAL CONTRIBUTIONS BY TEAM MEMBER
+================================================================================
+
+Melissa Mey Y. Laiz:
+- CA 15 (Portage Park) analysis
+- Northwest Chicago focus
+- Validation and quality control
+
+Pranav Kuchibhotla:
+- CA 62 (West Elsdon) analysis  
+- Southwest Chicago visualization
+- Network algorithm implementation
+
+Chilla Sai Krishna Reddy:
+- CA 53 (West Pullman) analysis
+- Interactive Folium dashboard
+- Temporal analysis
+
+Krystian Szczepankiewicz:
+- CA 25 (Austin) analysis
+- GPU optimization research
+- Final report compilation
+
+================================================================================
+REFERENCES
+================================================================================
+
+1. U.S. Census Bureau. American Community Survey 5-Year Estimates.
+   https://www.census.gov/programs-surveys/acs
+
+2. City of Chicago Data Portal. Community Area Boundaries.
+   https://data.cityofchicago.org/
+
+3. Blondel, V. D., et al. (2008). Fast unfolding of communities in large networks.
+   Journal of Statistical Mechanics: Theory and Experiment.
+
+4. Traag, V. A., et al. (2019). From Louvain to Leiden: guaranteeing 
+   well-connected communities. Scientific Reports.
+
+================================================================================
+END OF REPORT
+================================================================================
